@@ -164,8 +164,6 @@ df2 = df2.set_index('DateTime')
 
 df2.to_csv('CoalEAK.csv', index = True)
 
-
-
 #%% PLOT
 
 kuruluguc = ['940','450','8370','615','630','405','1605','990','1073','600','510','457','330','320','290','270','1200','1308','1320','370','380','405']
@@ -186,24 +184,6 @@ for iteration in range(len(kuruluguc)):
     plt.grid(True)
     #plt.savefig('{}24.png'.format(col))
     plt.show()
-    
-#%% EXPORTING PDF
-x = pd.read_csv('CoalKGUP.csv')
-
-x.tail(24).to_excel("Coal_KGUP.xlsx")
-
-fig, ax =plt.subplots(figsize=(12,4))
-ax.axis('off')
-the_table = ax.table(cellText=x[x.columns[0:11]].tail(24).values,colLabels=x.columns[0:11],loc='center', cellLoc='center')
-the_table.set_fontsize(35)
-plt.savefig("Coal1_KGUP.pdf", format="pdf", bbox_inches = 'tight')
-
-fig, ax =plt.subplots(figsize=(12,4))
-ax.axis('off')
-the_table = ax.table(cellText=x[x.columns[11:30]].tail(24).values,colLabels=x.columns[11:30],loc='center', cellLoc='center')
-the_table.set_fontsize(35)
-plt.savefig("Coal2_KGUP.pdf", format="pdf", bbox_inches = 'tight')
-
 
 #%% GAS
 
@@ -343,23 +323,6 @@ for iteration in range(len(kuruluguc)):
     plt.grid(True)
     #plt.savefig('{}24.png'.format(col))
     plt.show()
-#%% EXPORTING PDF
-
-x = pd.read_csv('GasKGUP.csv')
-
-x.tail(24).to_excel("Gas_KGUP.xlsx")
-
-fig, ax =plt.subplots(figsize=(12,4))
-ax.axis('off')
-the_table = ax.table(cellText=x[x.columns[0:9]].tail(24).values,colLabels=x.columns[0:9],loc='center', cellLoc='center')
-the_table.set_fontsize(35)
-plt.savefig("Gas1_KGUP.pdf", format="pdf", bbox_inches = 'tight')
-
-fig, ax =plt.subplots(figsize=(12,4))
-ax.axis('off')
-the_table = ax.table(cellText=x[x.columns[9:18]].tail(24).values,colLabels=x.columns[9:18],loc='center', cellLoc='center')
-the_table.set_fontsize(35)
-plt.savefig("Gas2_KGUP.pdf", format="pdf", bbox_inches = 'tight')
 
 #%% HYDRO
 
@@ -548,21 +511,3 @@ for iteration in range(len(kuruluguc)):
     plt.grid(True)
     #plt.savefig('{}24.png'.format(col))
     plt.show()
-
-#%% EXPORTING PDF
-
-x = pd.read_csv('HidroKGUP.csv')
-
-x.tail(24).to_excel("Hydro_KGUP.xlsx")
-
-fig, ax =plt.subplots(figsize=(12,4))
-ax.axis('off')
-the_table = ax.table(cellText=x[x.columns[0:8]].tail(24).values, colLabels = x.columns[0:8], loc='center', cellLoc='center')
-the_table.set_fontsize(35)
-plt.savefig("Hydro1_KGUP.pdf", format="pdf", bbox_inches = 'tight')
-
-fig, ax =plt.subplots(figsize=(12,4))
-ax.axis('off')
-the_table = ax.table(cellText=x[x.columns[8:16]].tail(24).values, colLabels = x.columns[8:16], loc='center', cellLoc='center')
-the_table.set_fontsize(35)
-plt.savefig("Hydro2_KGUP.pdf", format="pdf", bbox_inches = 'tight')
